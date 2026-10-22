@@ -1,0 +1,108 @@
+[
+  {
+    "id": "2411391-vendor-uthman",
+    "name": "Kafe Mahallah Uthman",
+    "location": "Mahallah Uthman, IIUM",
+    "openHours": "7:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2411391-uthman-1",
+        "name": "Roti Canai",
+        "description": "Crispy, flaky flatbread served with dhal curry",
+        "price": 2.0,
+        "available": true,
+        "category": "Bread"
+      },
+      {
+        "id": "2411391-uthman-2",
+        "name": "Naan Garlic",
+        "description": "Soft naan bread topped with garlic butter",
+        "price": 4.5,
+        "available": true,
+        "category": "Bread"
+      },
+      {
+        "id": "2411391-uthman-3",
+        "name": "Chicken Tandoori",
+        "description": "Marinated chicken roasted with traditional tandoori spices",
+        "price": 10.0,
+        "available": true,
+        "category": "Chicken"
+      },
+      {
+        "id": "2411391-uthman-4",
+        "name": "Roti Telur",
+        "description": "Flaky flatbread filled with egg, served with curry",
+        "price": 3.5,
+        "available": true,
+        "category": "Bread"
+      },
+      {
+        "id": "2411391-uthman-5",
+        "name": "Naan Cheese",
+        "description": "Soft naan filled with melted cheese",
+        "price": 6.0,
+        "available": true,
+        "category": "Bread"
+      },
+      {
+        "id": "2411391-uthman-6",
+        "name": "Maggie Goreng",
+        "description": "Fried instant noodles with egg and vegetables",
+        "price": 5.5,
+        "available": true,
+        "category": "Noodles"
+      },
+      {
+        "id": "2411391-uthman-7",
+        "name": "Tandoori Chicken Set",
+        "description": "Tandoori chicken served with naan and mint sauce",
+        "price": 13.0,
+        "available": true,
+        "category": "Chicken"
+      },
+      {
+        "id": "2411391-uthman-8",
+        "name": "Teh Tarik",
+        "description": "Classic Malaysian pulled milk tea",
+        "price": 2.5,
+        "available": true,
+        "category": "Drinks"
+      }
+    ]
+  },
+  {
+    "id": "2411391-vendor-amara",
+    "name": "Ayam Gepuk Amara",
+    "location": "IIUM Centre",
+    "openHours": "10:00 am - 10:00 pm",
+    "isOpen": true,
+    "menu": [
+      {
+        "id": "2411391-amara-1",
+        "name": "Ayam Gepuk Set A",
+        "description": "Fried chicken with rice, sambal, cucumber and tofu",
+        "price": 8.0,
+        "available": true,
+        "category": "Chicken"
+      },
+      {
+        "id": "2411391-amara-2",
+        "name": "Ayam Gepuk Set B",
+        "description": "Fried chicken with rice, extra sambal, tempeh and tofu",
+        "price": 10.0,
+        "available": true,
+        "category": "Chicken"
+      },
+      {
+        "id": "2411391-amara-3",
+        "name": "Ayam Gepuk Set C",
+        "description": "Large fried chicken with rice, sambal, tempeh, tofu and vegetables",
+        "price": 12.0,
+        "available": true,
+        "category": "Chicken"
+      }
+    ]
+  }
+]
