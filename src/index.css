@@ -1,9 +1,5 @@
 /* =====================================================================
-   CampusEats starter CSS (BICS 3301): complete, Weeks 1 to 11
-   Paste ALL of this into src/index.css once, in Week 1, and leave it.
-   Rules for later weeks (cart, forms, login, dashboard, offline bannerâ€¦)
-   do nothing until you build the components that use them.
-   You do not need to write CSS in this course; focus on React.
+   CampusEats starter CSS (BICS 3301): Weeks 1 to 11
    ===================================================================== */
 
 :root {
@@ -13,6 +9,7 @@
   --muted: #616e7c;
   --bg: #f7f8fa;
   --radius: 12px;
+
   font-family:
     system-ui,
     -apple-system,
@@ -26,10 +23,12 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
 }
 
+/* Header and navigation */
 .header {
   display: flex;
   justify-content: space-between;
@@ -38,18 +37,49 @@ body {
   background: var(--green);
   color: #fff;
 }
+
 .logo {
   margin: 0;
   font-size: 1.4rem;
 }
+
 .nav {
   display: flex;
+  align-items: center;
   gap: 1.25rem;
 }
+
 .nav a {
   color: #fff;
   text-decoration: none;
 }
+
+.nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.nav-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  appearance: none;
+}
+
+.nav-button:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.nav-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
 .badge {
   background: #fff;
   color: var(--green);
@@ -59,36 +89,43 @@ body {
   font-size: 0.85rem;
 }
 
+/* Main layout */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 1.5rem;
 }
+
 .section-title {
   font-size: 1.2rem;
   margin: 1.5rem 0 0.75rem;
 }
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1rem;
 }
 
+/* Cards */
 .card {
   background: #fff;
   border-radius: var(--radius);
   padding: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
+
 .card h2,
 .card h3 {
   margin: 0 0 0.25rem;
 }
+
 .vendor-card {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
+
 .thumb {
   width: 64px;
   height: 64px;
@@ -102,15 +139,18 @@ body {
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
+
 .muted {
   color: var(--muted);
   margin: 0.2rem 0;
   font-size: 0.9rem;
 }
+
 .price {
   font-weight: 700;
   margin: 0.5rem 0;
 }
+
 .status {
   display: inline-block;
   margin-top: 0.4rem;
@@ -119,14 +159,18 @@ body {
   font-size: 0.8rem;
   font-weight: 600;
 }
+
 .status.open {
   background: #e3f7e8;
   color: #1b7a3a;
 }
+
 .status.closed {
   background: #fdecea;
   color: #b3261e;
 }
+
+/* Buttons */
 .btn {
   width: 100%;
   padding: 0.55rem;
@@ -137,11 +181,17 @@ body {
   font-weight: 600;
   cursor: pointer;
 }
+
+.btn:hover:not(:disabled) {
+  background: #00564e;
+}
+
 .btn:disabled {
   background: #c5cbd3;
   cursor: not-allowed;
 }
 
+/* Footer */
 .footer {
   text-align: center;
   color: var(--muted);
@@ -149,12 +199,13 @@ body {
   font-size: 0.85rem;
 }
 
-/* Week 2 additions */
+/* Week 2: vendor selection and menu */
 .vendor-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
 }
+
 button.card {
   font: inherit;
   color: inherit;
@@ -163,15 +214,19 @@ button.card {
   cursor: pointer;
   width: 100%;
 }
+
 button.card:hover {
   border-color: var(--green-light);
 }
+
 .vendor-card.selected {
   border-color: var(--green);
 }
+
 .card h3 {
   font-size: 1.05rem;
 }
+
 .tag {
   display: inline-block;
   margin: 0 0 0.3rem;
@@ -183,52 +238,54 @@ button.card:hover {
   font-weight: 600;
 }
 
-/* Week 3 additions */
+/* Week 3: links and cart */
 .link {
   background: none;
   border: 0;
   padding: 0;
   font: inherit;
-  color: #fff;
+  color: var(--green);
   cursor: pointer;
 }
+
 .link.danger {
   color: #b3261e;
   font-size: 0.9rem;
 }
+
 .cart-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 1rem;
   align-items: start;
 }
-@media (max-width: 720px) {
-  .cart-layout {
-    grid-template-columns: 1fr;
-  }
-}
+
 .cart-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .cart-line {
   display: grid;
-  grid-template-columns: 1fr auto auto auto;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
   gap: 1rem;
   align-items: center;
   padding: 0.75rem 0;
   border-bottom: 1px solid #e4e7eb;
 }
+
 .cart-name {
   margin: 0;
   font-weight: 600;
 }
+
 .qty {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
+
 .qty button {
   width: 32px;
   height: 32px;
@@ -236,28 +293,46 @@ button.card:hover {
   border: 1px solid #c5cbd3;
   background: #fff;
   cursor: pointer;
-  font-size: 1.1rem;
+  font: inherit;
 }
+
+.qty button:hover {
+  background: var(--green-light);
+}
+
 .line-total {
   font-weight: 600;
   margin: 0;
 }
+
 .cart-total {
   text-align: right;
   font-size: 1.15rem;
   font-weight: 700;
   margin: 1rem 0 0;
 }
+
+.cart-line button {
+  white-space: nowrap;
+}
+
+.cart-line .link.danger {
+  justify-self: end;
+}
+
+/* Forms and validation */
 .form {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
 }
+
 .form label {
   font-weight: 600;
   font-size: 0.9rem;
   margin-top: 0.5rem;
 }
+
 .form input,
 .form select {
   padding: 0.5rem;
@@ -265,71 +340,84 @@ button.card:hover {
   border-radius: 8px;
   font: inherit;
 }
+
 .form .btn {
   margin-top: 1rem;
 }
+
 .field-error {
   color: #b3261e;
   font-size: 0.85rem;
   margin: 0;
 }
+
 .error {
   border-left: 4px solid #b3261e;
 }
 
-/* Week 4 additions */
+/* Week 4: links and order lists */
 .nav a.active {
   text-decoration: underline;
   text-underline-offset: 6px;
 }
+
 .logo-link {
   color: #fff;
   text-decoration: none;
 }
+
 a.card {
   text-decoration: none;
   color: inherit;
   border: 2px solid transparent;
 }
+
 a.card:hover {
   border-color: var(--green-light);
 }
+
 .container a {
   color: var(--green);
 }
+
 .order-list {
   list-style: none;
   padding: 0;
   display: grid;
   gap: 0.75rem;
 }
+
 .container a.card {
   color: inherit;
 }
 
-/* Week 5 additions */
+/* Week 5: authentication */
 .auth-page {
   max-width: 420px;
   margin: 2rem auto;
 }
+
 .auth-page h2 {
   margin: 0 0 0.5rem;
 }
+
 .btn-outline {
   background: #fff;
   color: var(--green);
   border: 1px solid var(--green);
   margin-top: 0.5rem;
 }
+
+.btn-outline:hover:not(:disabled) {
+  background: var(--green-light);
+}
+
 .user-name {
   opacity: 0.9;
   font-size: 0.9rem;
 }
-.nav {
-  align-items: center;
-}
 
-/* Week 6 additions */
+/* Week 6: status steps */
 .status-steps {
   display: flex;
   gap: 0.4rem;
@@ -338,6 +426,7 @@ a.card:hover {
   margin: 0.5rem 0 0;
   flex-wrap: wrap;
 }
+
 .status-steps li {
   padding: 0.15rem 0.6rem;
   border-radius: 999px;
@@ -346,22 +435,25 @@ a.card:hover {
   font-size: 0.8rem;
   font-weight: 600;
 }
+
 .status-steps li.done {
   background: var(--green);
   color: #fff;
 }
 
-/* Week 7 additions */
+/* Week 7: dashboard */
 .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
 }
+
 .btn-small {
   width: auto;
   padding: 0.4rem 0.8rem;
 }
+
 .dash-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -369,11 +461,7 @@ a.card:hover {
   margin-top: 1rem;
   align-items: start;
 }
-@media (max-width: 720px) {
-  .dash-grid {
-    grid-template-columns: 1fr;
-  }
-}
+
 .photo {
   width: 100%;
   height: 140px;
@@ -397,6 +485,7 @@ a.card:hover {
   border-radius: var(--radius);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
+
 .toast button {
   background: #e8a33d;
   color: #12302d;
@@ -406,6 +495,7 @@ a.card:hover {
   font-weight: 600;
   cursor: pointer;
 }
+
 .toast button.link-dark {
   background: transparent;
   color: #bfd8d5;
@@ -421,6 +511,7 @@ a.card:hover {
   text-align: center;
   font-size: 0.95rem;
 }
+
 .pending-badge {
   display: inline-block;
   margin: 0.25rem 0;
@@ -432,43 +523,53 @@ a.card:hover {
   font-weight: 600;
 }
 
-/* Week 9: an installable app must fit a phone screen */
+/* Week 9: responsive layout */
 @media (max-width: 640px) {
   .header {
     flex-wrap: wrap;
     gap: 0.5rem;
     padding: 0.75rem 1rem;
   }
+
   .nav {
     flex-wrap: wrap;
     gap: 0.4rem 1rem;
     font-size: 0.95rem;
   }
+
   .container {
     padding: 1rem;
   }
+
+  .cart-line {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.75rem;
+  }
+
+  .cart-line .line-total {
+    justify-self: start;
+  }
+
+  .cart-line .link.danger {
+    justify-self: end;
+  }
+
+  .dash-grid {
+    grid-template-columns: 1fr;
+  }
 }
-.link { background: none; border: 0; padding: 0; font: inherit; color: #fff; cursor: 
-pointer; }
-.link.danger { color: #b3261e; font-size: 0.9rem; }
-.cart-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; align-items: 
-start; }
-@media (max-width: 720px) { .cart-layout { grid-template-columns: 1fr; } }
-.cart-list { list-style: none; margin: 0; padding: 0; }
-.cart-line { display: grid; grid-template-columns: 1fr auto auto auto; gap: 1rem;
-             align-items: center; padding: 0.75rem 0; border-bottom: 1px solid 
-#e4e7eb; }
-.cart-name { margin: 0; font-weight: 600; }
-.qty { display: flex; align-items: center; gap: 0.5rem; }
-.qty button { width: 32px; height: 32px; border-radius: 8px; border: 1px solid 
-#c5cbd3;
-              background: #fff; cursor: pointer; }
-.line-total { font-weight: 600; margin: 0; }
-.cart-total { text-align: right; font-size: 1.15rem; font-weight: 700; margin: 1rem 0 
-0; }
-.form { display: flex; flex-direction: column; gap: 0.35rem; }
-.form label { font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
-.form input, .form select { padding: 0.5rem; border: 1px solid #c5cbd3; border
-radius: 8px; font: inherit; }
-.field-error { color: #b3261e; font-size: 0.85rem; margin: 0; }
-.error { border-left: 4px solid #b3261e; }
+
+@media (max-width: 420px) {
+  .cart-line {
+    column-gap: 0.5rem;
+  }
+
+  .qty {
+    gap: 0.25rem;
+  }
+
+  .qty button {
+    width: 28px;
+    height: 28px;
+  }
+}
