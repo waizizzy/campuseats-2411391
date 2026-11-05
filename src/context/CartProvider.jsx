@@ -50,7 +50,7 @@ export function CartProvider({ children }) {
     const order = {
       id: `order-${Date.now()}`,
       ...details,
-      items: cart,
+      lines: cart,
       total,
       createdAt: new Date().toISOString(),
     };

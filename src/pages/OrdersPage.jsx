@@ -24,7 +24,7 @@ function OrdersPage() {
             </p>
 
             <p>
-              {order.lines
+              {(order.lines ?? order.items ?? [])
                 .map((line) => `${line.qty}× ${line.item.name}`)
                 .join(", ")}
             </p>
